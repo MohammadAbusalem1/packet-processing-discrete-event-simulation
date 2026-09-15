@@ -42,9 +42,9 @@ The default experiment performs 20 independent replications using different pseu
 
 A separate long simulation collects packet-level samples for histogram generation and probability-distribution fitting. Exponential, Gamma, Weibull, Lognormal, and Normal candidate distributions are fitted where valid.
 
-The best fit is selected using minimum AIC. A Kolmogorov-Smirnov p-value is also recorded for diagnostic purposes.
+The candidate with the lowest Akaike Information Criterion (AIC) is reported as the preferred candidate among the distributions tested. A Kolmogorov-Smirnov statistic is also recorded as a descriptive fit diagnostic; a standard KS p-value is not reported because the distribution parameters are estimated from the same simulation samples.
 
-Waiting-time distributions can contain an atom at zero because some packets enter service immediately. For those datasets, the zero probability is reported separately and continuous distributions are fitted to positive observations only.
+Waiting-time distributions can contain an atom at zero because some packets enter service immediately. For those datasets, the zero probability is reported separately, and both the histogram used for visual comparison and the continuous-distribution fit use the strictly positive observations only.
 
 ## Reproducibility
 
